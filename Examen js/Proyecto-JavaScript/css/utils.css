@@ -1,0 +1,159 @@
+/* ==========================================================================
+   KRYZE MODE — UTILS & SYSTEM GLOBAL STYLES
+   ========================================================================== */
+
+/* 1. IMPORTACIÓN DE FUENTES GLOBALES */
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Supermercado+One&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* 2. VARIABLES GLOBALES (:ROOT) */
+:root {
+    /* Paleta de Colores - Temática Dark / Cyberpunk K-99 */
+    --color-bg-main: #0a0a0a;         /* Fondo profundo */
+    --color-bg-card: #141414;         /* Fondo de tarjetas y contenedores */
+    --color-bg-modal: #1a1a1a;        /* Fondo de ventanas modales */
+    --color-primary: #e50914;         /* Rojo Kryze de alta intensidad */
+    --color-primary-hover: #b80710;   /* Rojo oscuro para estados hover */
+    --color-secondary: #1f1f1f;       /* Gris oscuro para botones secundarios */
+    --color-secondary-hover: #2d2d2d; /* Hover secundario */
+    
+    /* Textos */
+    --color-text-main: #ffffff;       /* Texto principal sobre fondo oscuro */
+    --color-text-muted: #aaaaaa;      /* Texto secundario o deshabilitado */
+    --color-text-muted2: #777777;     /* Subtextos de menor jerarquía */
+    --color-success: #00ff66;         /* Verde para éxitos de sistema K-99 */
+    
+    /* Fuentes Tipográficas */
+    --font-main: 'Rajdhani', sans-serif;
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-accent-combo: 'Combo', cursive;
+    --font-accent-tech: 'Supermercado One', sans-serif;
+
+    /* Tamaños de Fuente Básicos */
+    --fs-xs: 12px;
+    --fs-sm: 14px;
+    --fs-md: 16px;
+    --fs-lg: 20px;
+    --fs-xl: 28px;
+    --fs-title: 48px;
+
+    /* Espaciados Base (Sistema de Caja) */
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 15px;
+    --space-lg: 20px;
+    --space-xl: 30px;
+    --space-xxl: 50px;
+
+    /* Componentes Estructurales y Bordes */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --border-cyber: 1px solid var(--color-secondary);
+    --border-active: 1px solid var(--color-primary);
+
+    /* Sombras y Efectos Glow */
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.5);
+    --shadow-hard: 0 8px 24px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 10px rgba(229, 9, 20, 0.4);
+
+    /* Transiciones Reutilizables */
+    --transition-fast: all 0.2s ease-in-out;
+    --transition-normal: all 0.3s ease;
+
+    /* Capas de Posicionamiento (Z-Index) */
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-modal: 1000;
+    --z-overlay: 999;
+
+    /* Layout */
+    --max-width-container: 1200px;
+}
+
+/* 3. RESET BÁSICO Y NORMALIZACIÓN VISUAL */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* 4. CLASES UTILITARIAS Y HELPERS REUTILIZABLES */
+
+/* Display Helpers */
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+.d-none { display: none !important; }
+.d-block { display: block; }
+
+/* Flexbox Helpers */
+.jc-center { justify-content: center; }
+.jc-between { justify-content: space-between; }
+.ai-center { align-items: center; }
+.flex-dir-col { flex-direction: column; }
+
+/* Aplicación Estratégica de las Nuevas Fuentes Solicitadas */
+.font-accent-combo {
+    font-family: var(--font-accent-combo) !important;
+}
+
+.font-tech {
+    font-family: var(--font-accent-tech) !important;
+}
+
+/* Clases de Alineación de Texto */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-uppercase { text-transform: uppercase; }
+
+/* Utilidades de Visibilidad */
+.visible { opacity: 1; visibility: visible; }
+.hidden { opacity: 0; visibility: hidden; }
+
+/* Sistema de Efectos Comunes */
+.transition-smooth {
+    transition: var(--transition-normal);
+}
+
+.shadow-glow-effect {
+    box-shadow: var(--shadow-glow);
+}

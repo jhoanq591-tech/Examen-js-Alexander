@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kryze Admin</title>
+    <link rel="stylesheet" href="/css/administrador.css">
+</head>
+
+<body>
+
+    <section id="dashboard-screen" class="screen active">
+        <header class="brand-header">
+        </header>
+
+        <div class="dashboard-container">
+            <aside class="sidebar">
+                <ul>
+                    <li>
+                        <p class="sidebar-link active" data-target="mod-categorias">Categorías</p>
+                    </li>
+                    <li>
+                        <p class="sidebar-link" data-target="mod-productos">Productos</p>
+                    </li>
+                    <li>
+                        <p class="sidebar-link" data-target="mod-pedidos">Pedidos</p>
+                    </li>
+                    <li>
+                        <p class="sidebar-link" data-target="mod-reportes">Reportes</p>
+                    </li>
+                </ul>
+
+                <div class="sidebar-bottom">
+                    <a href="/clientes.html" class="btn-sidebar">Volver a la tienda</a>
+                </div>
+
+            </aside>
+
+            <main class="main-content">
+
+                <div id="mod-categorias" class="sub-screen active">
+                    <div class="content-header">
+                        <h2>Categorías</h2>
+                        <button class="btn-primary" onclick="abrirModal('modal-categoria')">Agregar categoría</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-categorias">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div id="mod-productos" class="sub-screen">
+                    <div class="content-header">
+                        <h2>Productos</h2>
+                        <button class="btn-primary" onclick="abrirModal('modal-producto')">Nuevo Producto</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-productos">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div id="mod-reportes" class="sub-screen">
+                    <div class="content-header">
+                        <h2>Productos</h2>
+                        <button class="btn-primary" onclick="abrirModal('modal-reportes')">Nuevo Producto</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-productos">
+                            </tbody>
+                    </table>
+
+                <div id="mod-pedidos" class="sub-screen">
+                    </div>
+
+            </main>
+        </div>
+    </section>
+
+    <div id="modal-categoria" class="modal">
+        <div class="modal-content">
+            <h3 style="margin-bottom: 20px; color: #e50914; text-transform: uppercase;">Nueva Categoría</h3>
+            <form id="form-categoria">
+                <div class="form-group">
+                    <label>Nombre de la Categoría</label>
+                    <input type="text" id="cat-nombre" placeholder="Ej. Accesorios" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="cat-descripcion" rows="4" placeholder="Breve descripción..." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modal-categoria')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Categoría</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-producto" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <h3 style="margin-bottom: 20px; color: #e50914; text-transform: uppercase;">Gestionar Producto</h3>
+            <form id="form-producto">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Código</label>
+                        <input type="text" id="prod-codigo" placeholder="Ej. KRZ-01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" id="prod-nombre" placeholder="Nombre del artículo" required>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select id="prod-categoria">
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio (COP)</label>
+                        <input type="number" id="prod-precio" placeholder="350000" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Stock Inicial</label>
+                    <input type="number" id="prod-stock" placeholder="10" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label>URL de la Imagen</label>
+                    <input type="text" id="prod-imagen" placeholder="/img/kz tech.png" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción Breve</label>
+                    <textarea id="prod-descripcion" rows="3" placeholder="Detalles del producto..." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modal-producto')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/administrador.js"></script>
+</body>
+</html>

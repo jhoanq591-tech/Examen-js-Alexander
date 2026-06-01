@@ -1,0 +1,31 @@
+@import url('utils.css');
+
+/* El resto del código de productos.css se mantiene intacto abajo... */
+
+:root {
+      --red: #e01010; --bg: #0a0a0a; --card: #111; --border: #1e1e1e; --text: #f0f0f0; --muted2: #888; --muted: #555;
+    }
+    body {
+      background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif;
+      margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+    .logo h1 { font-family: 'Bebas Neue'; font-size: 46px; letter-spacing: 5px; margin: 0; text-align: center;}
+    .logo h1 span { color: var(--red); }
+    
+    .card { background: var(--card); border: 1px solid var(--border); padding: 30px; width: 100%; max-width: 400px; margin-top: 20px; }
+    .field { margin-bottom: 20px; }
+    .field label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--muted2); text-transform: uppercase; }
+    .field input { width: 100%; padding: 12px; background: #000; border: 1px solid var(--border); color: white; font-family: 'Rajdhani'; box-sizing: border-box;}
+    .field input:focus { border-color: var(--red); outline: none; }
+    
+    .btn { width: 100%; background: var(--red); border: none; padding: 12px; color: white; font-family: 'Bebas Neue'; font-size: 18px; letter-spacing: 3px; cursor: pointer; }
+    .back-link { display: block; text-align: center; margin-top: 20px; color: var(--muted2); text-decoration: none; font-size: 14px; }
+    .back-link:hover { color: var(--red); }
+
+    footer { background-color: #0b0b0b; border-top: 1px solid var(--border); padding: 40px 20px 20px 20px; }
+    .footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer-section h3 { font-family: 'Bebas Neue', sans-serif; color: var(--red); font-size: 24px; letter-spacing: 3px; margin-bottom: 15px; }
+    .footer-section p, .footer-section ul { font-size: 14px; color: var(--muted2); list-style: none; padding:0; margin:0; }
+    .footer-bottom { text-align: center; font-size: 12px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 30px; padding-top: 20px; border-top: 1px solid #151515;}
+    

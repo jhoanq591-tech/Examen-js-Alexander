@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kryze Mode - Cliente</title>
+    <link rel="stylesheet" href="css/clientes.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="menu container"> 
+            <input type="checkbox" id="menu">
+            <label for="menu" class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="clientes.html">Inicio</a></li>
+                    <li><a href="#productos1">Productos</a></li>
+                    <li><a href="login.html">Admin</a></li>
+                    <li><button id="openCartBtn" class="nav-cart-btn" type="button">🛒 Carrito (<span id="cartCount">0</span>)</button></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content">
+            <div class="header-info">
+                <h1 class="principal">KRYZE MODE</h1>
+                <p>El Estilo Se Basa En Los Detalles.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-container container" id="productos1">
+        <input type="text" id="kryze-search" placeholder="Escribe el tipo de prenda que quieres" autocomplete="on">
+    </div>
+
+    <div class="contenedor1" id="productos-container"></div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="cart-sidebar-header">
+                <h2>TU EQUIPAMIENTO</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            
+            <div class="cart-items-body" id="cartItemsBody"></div>
+            
+            <div class="cart-sidebar-footer">
+                <div class="cart-total">
+                    Total: <span id="cartTotalValue">$0 COP</span>
+                </div>
+                <button id="checkoutBtn" onclick="toggleCheckoutForm(true)">Proceder al Despacho</button>
+                
+                <div id="checkoutFormSection" class="checkout-section" style="display: none; margin-top: 15px; border-top: 1px solid #1e1e1e; padding-top: 15px;">
+                    <h3 style="font-family:'Bebas Neue', sans-serif; letter-spacing:1px; margin-bottom:10px; color:red;">DATOS DE ENVÍO</h3>
+                    <form id="checkoutFormElement" class="kryze-form">
+                        <div class="form-group">
+                            <label style="display:block; font-size:11px; color:#666; margin-bottom:4px;">Nombre Completo</label>
+                            <input type="text" id="cliente-nombre" placeholder="Ej. Jhoan Doe" required style="width:100%; background:#050505; border:1px solid #1e1e1e; padding:10px; color:#fff; font-size:13px; border-radius:4px;">
+                        </div>
+                        <div class="form-group" style="margin-top: 8px;">
+                            <label style="display:block; font-size:11px; color:#666; margin-bottom:4px;">Correo Electrónico</label>
+                            <input type="email" id="cliente-email" placeholder="user@kryzemail.com" required style="width:100%; background:#050505; border:1px solid #1e1e1e; padding:10px; color:#fff; font-size:13px; border-radius:4px;">
+                        </div>
+                        <div class="form-group" style="margin-top: 8px;">
+                            <label style="display:block; font-size:11px; color:#666; margin-bottom:4px;">Teléfono</label>
+                            <input type="tel" id="cliente-telefono" placeholder="+57 300 000 0000" required style="width:100%; background:#050505; border:1px solid #1e1e1e; padding:10px; color:#fff; font-size:13px; border-radius:4px;">
+                        </div>
+                        <div class="form-group" style="margin-top: 8px;">
+                            <label style="display:block; font-size:11px; color:#666; margin-bottom:4px;">Dirección de Entrega</label>
+                            <input type="text" id="cliente-direccion" placeholder="Carrera / Calle # XX - XX" required style="width:100%; background:#050505; border:1px solid #1e1e1e; padding:10px; color:#fff; font-size:13px; border-radius:4px;">
+                        </div>
+                        
+                        <input type="hidden" id="cliente-ciudad" value="Bucaramanga">
+                        <input type="hidden" id="cliente-estado" value="Santander">
+
+                        <div class="modal-actions" style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button type="button" class="btn-secondary" style="border-radius:6px; padding:10px; background:#222; color:#fff; border:none; cursor:pointer; font-weight:bold;" onclick="toggleCheckoutForm(false)">Cancelar</button>
+                            <button type="submit" class="btn-primary" style="border-radius:6px; padding:10px; background:red; color:#fff; border:none; cursor:pointer; font-weight:bold;">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container" id="footer1">
+            <div class="footer-section">
+                <h3>Contactos</h3>
+                <ul>
+                    <li class="rojo">📧 estilodiferente@kryzemode.com</li>
+                    <li class="rojo">📞 +57 3000000000</li>
+                    <li class="rojo">📍 Bucaramanga, Santander, Colombia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 <span>Nosotros</span> — Panel de Control Corporativo.
+        </div>
+    </footer>
+
+    <script src="js/clientes.js"></script>
+</body>
+</html>
